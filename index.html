@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Giane,</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div id="intro-screen" class="screen active">
+            <div class="intro-content">
+                <h1 id="intro-message"></h1>
+                <p id="intro-hint" class="tap-hint hidden">tap to continue</p>
+            </div>
+        </div>
+
+        <div id="bouquet-screen" class="screen hidden">
+
+            <div class="label-wrapper">
+                <div class="label-card">
+                    <p class="label-eyebrow">FOR MY FAVORITE PERSON</p>
+                    <h1 class="label-title">Pick Every Lily Petal</h1>
+                    <p class="label-subtitle">Each petal has a tiny note from me. Tap them all.</p>
+                </div>
+            </div>
+
+            <div class="bouquet-wrapper">
+                <svg id="bouquet-svg" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="lilyGradient1" cx="50%" cy="80%" r="80%" fx="50%" fy="80%">
+                            <stop offset="0%" style="stop-color:#fff0f5;stop-opacity:1" />
+                            <stop offset="40%" style="stop-color:#ff99cc;stop-opacity:1" />
+                            <stop offset="90%" style="stop-color:#ff3366;stop-opacity:1" />
+                        </radialGradient>
+
+                        <radialGradient id="lilyGradient2" cx="50%" cy="80%" r="80%" fx="50%" fy="80%">
+                            <stop offset="0%" style="stop-color:#ffe6f2;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#ff66b2;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#cc0052;stop-opacity:1" />
+                        </radialGradient>
+
+                        <radialGradient id="lilyGradient3" cx="50%" cy="80%" r="80%" fx="50%" fy="80%">
+                            <stop offset="0%" style="stop-color:#f8d7da;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#e685b5;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#a61e4d;stop-opacity:1" />
+                        </radialGradient>
+
+                        <linearGradient id="paperGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#fce4ec;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#f8bbd0;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#f48fb1;stop-opacity:1" />
+                        </linearGradient>
+
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                            <feMerge>
+                                <feMergeNode in="coloredBlur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <g transform="translate(300, 650)">
+                        <path class="stem" d="M0,0 Q-30,-100 -120,-320" stroke-width="6" />
+                        <path class="stem" d="M0,0 Q30,-100 120,-320" stroke-width="6" />
+                        <path class="stem" d="M0,0 Q0,-150 0,-300" />
+                        <path class="stem" d="M0,0 Q-20,-150 -100,-280" />
+                        <path class="stem" d="M0,0 Q20,-150 100,-280" />
+
+                        <path class="leaf" d="M0,-150 Q-60,-180 -80,-250 Q-20,-200 0,-150" />
+                        <path class="leaf" d="M0,-200 Q60,-230 80,-300 Q20,-250 0,-200" />
+                    </g>
+
+                    <g transform="translate(300, 540)">
+                        <path d="M-60,-50 L0,120 L60,-50 L0,-20 Z" fill="url(#paperGradient)" stroke="#f06292"
+                            stroke-width="2" />
+                    </g>
+
+                    <g transform="translate(300, 510)">
+                        <path d="M0,0 C-20,-20 -40,10 -10,10 C-30,20 -20,40 0,20 C20,40 30,20 10,10 C40,10 20,-20 0,0"
+                            fill="#ad1457" stroke="#880e4f" />
+                        <path d="M0,10 Q-10,30 -20,50 L-10,55 Q0,35 5,15" fill="#ad1457" />
+                        <path d="M0,10 Q10,30 20,50 L10,55 Q0,35 -5,15" fill="#ad1457" />
+                    </g>
+
+                    <g class="flower" transform="translate(180, 330) scale(0.9)">
+                        <g transform="rotate(15)">
+                            <path class="petal p3" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(75)">
+                            <path class="petal p3" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(135)">
+                            <path class="petal p3" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(195)">
+                            <path class="petal p3" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(255)">
+                            <path class="petal p3" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(315)">
+                            <path class="petal p3" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <circle class="flower-center" r="10" />
+                    </g>
+
+                    <g class="flower" transform="translate(420, 330) scale(0.9)">
+                        <g transform="rotate(-15)">
+                            <path class="petal p3" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(45)">
+                            <path class="petal p3" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(105)">
+                            <path class="petal p3" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(165)">
+                            <path class="petal p3" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(225)">
+                            <path class="petal p3" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(285)">
+                            <path class="petal p3" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <circle class="flower-center" r="10" />
+                    </g>
+
+                    <g class="flower" transform="translate(300, 350) scale(1.2)">
+                        <g transform="rotate(0)">
+                            <path class="petal p1" d="M0,0 Q30,-50 0,-110 Q-30,-50 0,0" />
+                        </g>
+                        <g transform="rotate(60)">
+                            <path class="petal p1" d="M0,0 Q30,-50 0,-110 Q-30,-50 0,0" />
+                        </g>
+                        <g transform="rotate(120)">
+                            <path class="petal p1" d="M0,0 Q30,-50 0,-110 Q-30,-50 0,0" />
+                        </g>
+                        <g transform="rotate(180)">
+                            <path class="petal p1" d="M0,0 Q30,-50 0,-110 Q-30,-50 0,0" />
+                        </g>
+                        <g transform="rotate(240)">
+                            <path class="petal p1" d="M0,0 Q30,-50 0,-110 Q-30,-50 0,0" />
+                        </g>
+                        <g transform="rotate(300)">
+                            <path class="petal p1" d="M0,0 Q30,-50 0,-110 Q-30,-50 0,0" />
+                        </g>
+                        <g class="stamen">
+                            <line x1="0" y1="0" x2="-10" y2="-40" stroke="#ccffcc" stroke-width="2" />
+                            <circle cx="-10" cy="-40" r="3" fill="#8B4513" />
+                            <line x1="0" y1="0" x2="10" y2="-40" stroke="#ccffcc" stroke-width="2" />
+                            <circle cx="10" cy="-40" r="3" fill="#8B4513" />
+                            <line x1="0" y1="0" x2="0" y2="-45" stroke="#ccffcc" stroke-width="2" />
+                            <circle cx="0" cy="-45" r="3" fill="#8B4513" />
+                        </g>
+                    </g>
+
+                    <g class="flower" transform="translate(200, 380) rotate(-20) scale(1.1)">
+                        <g transform="rotate(0)">
+                            <path class="petal p2" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(60)">
+                            <path class="petal p2" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(120)">
+                            <path class="petal p2" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(180)">
+                            <path class="petal p2" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(240)">
+                            <path class="petal p2" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(300)">
+                            <path class="petal p2" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g class="stamen">
+                            <line x1="0" y1="0" x2="-8" y2="-35" stroke="#fff" stroke-width="2" />
+                            <circle cx="-8" cy="-35" r="3" fill="#8B4513" />
+                            <line x1="0" y1="0" x2="8" y2="-35" stroke="#fff" stroke-width="2" />
+                            <circle cx="8" cy="-35" r="3" fill="#8B4513" />
+                        </g>
+                    </g>
+
+                    <g class="flower" transform="translate(400, 380) rotate(20) scale(1.1)">
+                        <g transform="rotate(0)">
+                            <path class="petal p2" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(60)">
+                            <path class="petal p2" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(120)">
+                            <path class="petal p2" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(180)">
+                            <path class="petal p2" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(240)">
+                            <path class="petal p2" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g transform="rotate(300)">
+                            <path class="petal p2" d="M0,0 Q25,-45 0,-100 Q-25,-45 0,0" />
+                        </g>
+                        <g class="stamen">
+                            <line x1="0" y1="0" x2="-8" y2="-35" stroke="#fff" stroke-width="2" />
+                            <circle cx="-8" cy="-35" r="3" fill="#8B4513" />
+                            <line x1="0" y1="0" x2="8" y2="-35" stroke="#fff" stroke-width="2" />
+                            <circle cx="8" cy="-35" r="3" fill="#8B4513" />
+                        </g>
+                    </g>
+                </svg>
+
+                <div id="music-container" class="music-widget">
+                    <div id="album">
+                        <div id="cover"></div>
+                        <div id="vinyl">
+                            <div id="vinyl-print"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="counter-pill" class="counter-pill">
+                0 / 30 petals
+            </div>
+
+            <div id="message-display" class="message-box hidden">
+                <p id="message-text"></p>
+            </div>
+        </div>
+
+        <div id="question-screen" class="screen hidden">
+            <div class="label-wrapper question-wrapper">
+                <div class="label-card question-card">
+                    <p class="label-eyebrow">ONE LAST QUESTION</p>
+                    <h1 class="label-title">Will you be my Valentine?</h1>
+                    <div class="buttons">
+                        <button class="yes-btn" onclick="handleYes()">Yes</button>
+                        <button class="yes-btn" onclick="handleYes()">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="celebration-screen" class="screen hidden">
+            <div class="gif-container">
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95Y3h4ZnJueW5qdXl3c2Q0ZThrMWk4cDh2byZlcD12MV9pbnRlcm5hbF9naWZfYnlfct9cw/KztT2c4u8mYYUiMKdJ/giphy.gif"
+                    alt="Cute Bears Hugging" class="cute-gif">
+            </div>
+
+            <div class="label-wrapper celebration-wrapper">
+                <div class="label-card celebration-card">
+                    <h1 class="label-title">Yay!! I love you! &lt;3</h1>
+
+                </div>
+            </div>
+        </div>
+
+
+        <audio id="bg-music" src="music.mp3" loop></audio>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
