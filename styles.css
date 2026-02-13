@@ -275,7 +275,7 @@ body {
     white-space: nowrap;
     opacity: 0;
     transform: scale(0.8) translateY(10px);
-    animation: popInFloat 0.8s forwards ease-out;
+    animation: popInFloat 3s forwards ease-out;
 }
 
 .msg-bubble::after {

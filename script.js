@@ -96,7 +96,7 @@ function createBubble(targetElement, text) {
 
     setTimeout(() => {
         bubble.remove();
-    }, 1000);
+    }, 3000);
 }
 
 function transitionToQuestion() {
